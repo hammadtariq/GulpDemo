@@ -1,13 +1,19 @@
 /**
  * Created by 192.168.3.29 on 8/22/2015.
  */
+//for copy
 var gulp = require("gulp");
+
+//for deletion
 var rimraf=require("rimraf");
+
+//for concatenation
 var uglify = require("gulp-uglify");
 
 gulp.task('hello',function(){
   console.log('test');
 });
+
 //this task run if we type only gulp here it is dependend on clean and copy task
 // so it will run clean task first then copy
 gulp.task('default',['clean','copy4']);
@@ -48,6 +54,7 @@ gulp.task('clean',function(){
   })
 });
 
+//concatenate two js files syntax
 gulp.task('concatenate',function(){
   gulp.src('app1/*.js')
     .pipe(concat('file2.js'))
